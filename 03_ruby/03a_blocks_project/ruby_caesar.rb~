@@ -1,0 +1,4 @@
+def caesar_cipher(sentence, offset)
+    words = sentence.split(' ')
+    words.each do |word|
+end
