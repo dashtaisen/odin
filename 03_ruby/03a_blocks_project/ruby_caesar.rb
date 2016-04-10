@@ -1,19 +1,30 @@
-def caesar_cipher(word, n)
-	new_word = ""
-	word.each_char do |i|
-		n.times do
-			if(i == "z")
-				i = "a"
-				next
-			elsif(i == "Z")
-				i = "A"
-				next
-			end
-			i.next!
-			i == "%" ? i = " " : ""
-		end
-		new_word += i	
-	end
-	puts new_word
+def caesar_cipher
+    puts "Input a string"
+    string = gets.chomp
+    puts "Input a shift value"
+    shift = gets.chomp.to_i
+    
+    puts "You input the string \"#{string}\" and the shift #{shift}"
+    
+    words = string.split("")
+    new_string = ""
+    words.each do |word|
+        word.each_char do |char|
+            shift.times do
+               if char == " "
+                  char = " "
+               elsif char == "z"
+                   char = "a"
+               elsif char == "Z"
+                   char = "A"
+               else
+                  char = char.next
+               end 
+            end
+            new_string << char
+        end
+    end
+    puts new_string
 end
-cipher("What a string!", 5)
+
+caesar_cipher
