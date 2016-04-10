@@ -1,0 +1,4 @@
+def append(array, n)
+  array << 0 if n == 0
+  append(array, n-1)
+end
