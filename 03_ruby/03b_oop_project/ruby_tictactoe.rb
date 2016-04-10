@@ -138,5 +138,6 @@ class Game
         end
       end
 end
-
 end
+
+Game.new(ComputerPlayer, ComputerPlayer).play
